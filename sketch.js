@@ -41,14 +41,14 @@ background(0,0,0,25);
   for( var i = 0 ; i < N ; i++ ) {
     push();
     rotate( 2*PI * i/N);
-    var p0 = createVector( (-0.2)*width , (0)*height );
+    var p0 = createVector( (-0.2*rgb)*width , (0)*height );
   	var p1 = createVector( (-0.75)*width , (0)*height );
   	var p2 = createVector( ( 0.01*rgb)*width , (0)*height );
   	var p3 = createVector( ( 0.75)*width , (0)*height );
     
     var pr1 = rotatex( p1 , i , frameCount*0.01 );
     var pr3 = rotatex( p3 , p2 , -frameCount*0.01 );
-    stroke( 1,mouseX,mouseX,26);
+    stroke( i,mouseX,mouseX,26);
     bezier( p0.x , p0.y , pr1.x , pr1.y , pr3.x , pr3.y , p2.x , p2.y );
     
     pr1 = rotatex( p1 , i , frameCount*0.01 + 0.5*PI );
@@ -71,6 +71,3 @@ background(0,0,0,25);
     
   }
   pop();
-  
-}
-	
